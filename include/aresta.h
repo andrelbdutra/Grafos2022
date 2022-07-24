@@ -3,29 +3,24 @@
 
 using namespace std;
 
-// Definição da classe Aresta
+// Definiï¿½ï¿½o da classe Aresta
 class Aresta{
 
     // Atributos
     private:
         int id_alvo;
+        int target_id;
         Aresta* proxima_aresta;
-        Aresta* anterior_aresta;
         float peso;
 
     public:
-        // Construtor
-        Aresta(int id_alvo);
-        // Destrutor
+        Aresta(int id_alvo, int target_id);
         ~Aresta();
-        // Getters
         int getIdAlvo();
+        int getTargetId();
         Aresta* getProxAresta();
-        Aresta* getAnteriorAresta();
         float getPeso();
-        // Setters
         void setProxAresta(Aresta* aresta);
-        void setAnteriorAresta(Aresta* aresta);
         void setPeso(float peso);
 
 };

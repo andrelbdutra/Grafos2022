@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Definição da classe No
+// Definiï¿½ï¿½o da classe No
 class No{
 
     // Atributos
@@ -12,17 +12,17 @@ class No{
         Aresta* primeira_aresta;
         Aresta* ultima_aresta;
         int id;
+        int posicao;
         unsigned int grau_entrada;
         unsigned int grau_saida;
+        int grau;
         float peso;
         No* proximo_no;
-        No* anterior_no;
-        int grupo;
+        bool visitado;
 
     public:
         // Construtor
         No(int id);
-        No(int id, int grupo);
         // Destrutor
         ~No();
         // Getters
@@ -31,16 +31,17 @@ class No{
         int getId();
         int getGrauEntrada();
         int getGrauSaida();
-        int getGrupo();
+        int getGrau();
         float getPeso();
         No* getProxNo();
+        bool getVisited();
         // Setters
         void setProxNo(No* no);
         void setPeso(float peso);
-        void setGrauEntrada(int grau);
+        void setVisited(bool visitado);
         // Outros metodos
         bool searchAresta(int id_alvo);
-        void insertEdge(int id_alvo, float peso);
+        void insertEdge(int id_alvo, int posicao_alvo, float peso);
         void removeTodasArestas();
         int removeAresta(int id, bool direcionado, No* no_alvo);
         void incrementaGrauSaida();
@@ -48,7 +49,8 @@ class No{
         void incrementaGrauEntrada();
         void decrementaGrauEntrada();
         Aresta* hasEdgeBetween(int id_alvo);
-
+        int getPosition();
+        void setPosition(int posicao);
 };
 
 #endif // NO_H_INCLUDED

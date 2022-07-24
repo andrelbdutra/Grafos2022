@@ -47,7 +47,7 @@ Grafo::~Grafo()
 
         prox_no->removeTodasArestas();
         No *aux_no = prox_no->getProxNo();
-        delete next_no;
+        delete prox_no;
         prox_no = aux_no;
     }
 }

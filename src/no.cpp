@@ -12,25 +12,13 @@ using namespace std;
 No::No(int id){
 
     this->id = id;
-    this->grau_entrada = 0;
-    this->grau_saida = 0;
-    this->peso = 0;
-    this->primeira_aresta = nullptr;
-    this->ultima_aresta = nullptr;
-    this->proximo_no = nullptr;
-    this->grupo = -1;
-};
-
-No::No(int id, int grupo){
-
-    this->id = id;
-    this->grau_entrada = 0;
-    this->grau_saida = 0;
-    this->peso = 0;
-    this->primeira_aresta = nullptr;
-    this->ultima_aresta = nullptr;
-    this->proximo_no = nullptr;
-    this->grupo = grupo;
+   this->grau_entrada =0;
+   this->grau_saida = 0;
+   this->peso = 0;
+   this->primeira_aresta =nullptr;
+   this->ultima_aresta = nullptr;
+   this->proximo_no = nullptr;
+   this->visitado = false;
 };
 
 // Destrutor
@@ -44,6 +32,6 @@ No::~No(){
         delete prox_aresta;
         prox_aresta = aux_aresta;
 
-    }
+    };
 
 };

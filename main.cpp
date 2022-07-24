@@ -7,8 +7,8 @@
 //#include <iomanip>
 #include <stdlib.h>
 //#include <chrono>
-#include "grafo.h"
-#include "no.h"
+#include "include/grafo.h"
+#include "include/no.h"
 
 using namespace std;
 
@@ -16,7 +16,7 @@ Grafo* leitura(ifstream& arquivo_entrada, int direcionado, int arestaComPeso, in
 }
 
 void leituraArquivo(ifstream& arquivo_entrada, bool direcionado, bool arestaComPeso, bool noComPeso){
-    //Variáveis auxiliares da criação dos nós no Grafo
+    //Variï¿½veis auxiliares da criaï¿½ï¿½o dos nï¿½s no Grafo
     int ordem;
     int verticeOrigem;
     int verticeAlvo;
@@ -39,7 +39,7 @@ int main(int argc, char const *argv[])
     int b[3];
     int c[3];
 
-    //verificando se há 6 argumentos no programa
+    //verificando se hï¿½ 6 argumentos no programa
     if(argc != 6){
         cout << "Argumentos invalidos!";
         return 1;
@@ -53,7 +53,7 @@ int main(int argc, char const *argv[])
     arquivo_entrada.open(argv[1], ios::in);
 
     Grafo* grafo;
-    //testando se os arquivos estão abertos
+    //testando se os arquivos estï¿½o abertos
     if(arquivo_entrada.is_open()){
         cout << "Lendo arquivo: " << argv[1] << endl;
         leituraArquivo(arquivo_entrada, 0, 0, 0);
@@ -73,7 +73,7 @@ int main(int argc, char const *argv[])
         i++;
     }
     for(int k=0; k <= 2; k++){
-        cout << "vertice " << k+1 << "°: " << a[k] << " -> " << b[k] << " [" << c[k] << "]" << endl;
+        cout << "vertice " << k+1 << "ï¿½: " << a[k] << " -> " << b[k] << " [" << c[k] << "]" << endl;
     }
     //fechando arquivo de entrada
     arquivo_entrada.close();
